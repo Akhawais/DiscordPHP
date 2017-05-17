@@ -16,6 +16,7 @@ use Discord\Helpers\Collection;
 use Discord\Parts\Part;
 use Discord\Parts\User\Member;
 use Discord\Parts\User\User;
+use React\Promise\Deferred;
 
 /**
  * A message which is posted to a Discord text channel.
