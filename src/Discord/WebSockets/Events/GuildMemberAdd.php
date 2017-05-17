@@ -33,8 +33,6 @@ class GuildMemberAdd extends Event
             $this->discord->guilds->push($guild);
         }
 
-        
-        $this->emit('member-join', $memberPart);
         $deferred->resolve($memberPart);
     }
 }
