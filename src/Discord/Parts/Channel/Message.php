@@ -119,6 +119,22 @@ class Message extends Part
 
         return $roles;
     }
+    
+    /**
+     * Deletes the message from the channel.
+     *
+     * @return \React\Promise\Promise
+     */
+    public function delete()
+    {
+        $deferred = new Deferred();
+        
+        $this->http->delete("channels/{$this->channel->id}/messages/{$this->id}")->then(
+            \React\Partial\bind_right($this->resolve, $deferred),
+            \React\Partial\bind_right($this->reject, $deferred)
+        );
+        return $deferred->promise();
+    }
 
     /**
      * Returns the mention attribute.
