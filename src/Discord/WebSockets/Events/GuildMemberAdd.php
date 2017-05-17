@@ -34,5 +34,7 @@ class GuildMemberAdd extends Event
         }
 
         $deferred->resolve($memberPart);
+        
+        $this->emit('member-join', $memberPart);
     }
 }
