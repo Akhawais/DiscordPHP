@@ -613,7 +613,7 @@ class Channel extends Part
             \React\Partial\bind_right($this->reject, $deferred)
         );
 
-        return $deferred->resolve();
+        return $deferred->promise();
     }
 
     /**
